@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
 
-  resources :articles, only: [:show, :new, :create, :edit, :update]
+  resources :articles, only: [:show, :new, :create, :edit, :update, :destroy]
 
+
+  get '/.well-known/*path', to: proc { [404, {}, ['Not Found']] }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
