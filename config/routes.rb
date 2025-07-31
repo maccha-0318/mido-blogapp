@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
 
-  resources :articles, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :articles
 
 
   get '/.well-known/*path', to: proc { [404, {}, ['Not Found']] }
