@@ -20,6 +20,7 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 gem "sassc-rails"
 
+gem "devise"
 gem "faker"
 gem "hamlit"
 gem "annotate"
