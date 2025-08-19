@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "articles#index"
 
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:new, :create]
+  end
 
 
   get "/.well-known/*path", to: proc { [ 404, {}, [ "Not Found" ] ] }

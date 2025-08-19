@@ -17,5 +17,16 @@
   .article_content
     = @article.content
 
+  .article
+    %h2 コメント一覧
+    - @comments.each do |comment|
+      .article_comment
+        %p= comment.content
+
   .article_heart
     = image_tag 'heart.svg'
+
+  .container
+    = link_to new_article_comment_path(@article) do
+      .btn-secondary
+        コメントを追加
