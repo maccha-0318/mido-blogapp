@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
+  resource :profile, only: [:show, :edit, :update]
 
   get "/.well-known/*path", to: proc { [ 404, {}, [ "Not Found" ] ] }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
