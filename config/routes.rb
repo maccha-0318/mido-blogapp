@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: [:new, :create]
+    resource :like, only: [:create, :destroy]
   end
 
   resource :profile, only: [:show, :edit, :update]
+  resources :favorites, only: [:index]
 
   get "/.well-known/*path", to: proc { [ 404, {}, [ "Not Found" ] ] }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
